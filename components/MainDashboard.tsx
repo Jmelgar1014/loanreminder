@@ -18,12 +18,13 @@ const dashboardItems = [
 
 const MainDashboard = () => {
   return (
-    <Sidebar className="" variant="floating" collapsible="icon">
-      <SidebarContent className="bg-muted">
-        <SidebarMenu>
+    <Sidebar variant="floating" collapsible="icon">
+      <SidebarContent className="bg-muted rounded-lg">
+        <SidebarMenu className="mt-4">
           {dashboardItems.map((item) => (
-            <SidebarMenuItem key={item.title}>
+            <SidebarMenuItem key={item.title} className="flex justify-center ">
               <SidebarMenuButton
+                className="hover:bg-primary"
                 render={(props) => <Link {...props} href={item.url} />}
               >
                 <item.icon />

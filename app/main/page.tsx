@@ -1,4 +1,3 @@
-import EmptyList from "@/components/EmptyList";
 import LoanListContainer from "@/components/LoanListContainer";
 import React from "react";
 
