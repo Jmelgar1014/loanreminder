@@ -11,7 +11,11 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty";
 
-const EmptyList = () => {
+interface loanFormData {
+  isFormOpen: () => void;
+}
+
+const EmptyList = ({ isFormOpen }: loanFormData) => {
   return (
     <>
       <div className="bg-card w-full m-4 sm:w-96 sm:h-80 rounded-lg ">
@@ -28,20 +32,11 @@ const EmptyList = () => {
           </EmptyHeader>
           <EmptyContent>
             <div className="flex gap-2">
-              <Button className="hover:cursor-pointer">Add Loan</Button>
-              {/* <Button variant="outline">Import Project</Button> */}
+              <Button className="hover:cursor-pointer" onClick={isFormOpen}>
+                Add Loan
+              </Button>
             </div>
           </EmptyContent>
-          {/* <Button
-            variant="link"
-            asChild
-            className="text-muted-foreground"
-            size="sm"
-          >
-            <a href="#">
-              Learn More <ArrowUpRightIcon />
-            </a>
-          </Button> */}
         </Empty>
       </div>
     </>

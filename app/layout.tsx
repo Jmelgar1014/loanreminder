@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Raleway } from "next/font/google";
 import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import MainDashboard from "@/components/MainDashboard";
+import { QueryProvider } from "@/hooks/QueryProvider";
 
 const raleway = Raleway({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -31,13 +32,15 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SidebarProvider className="">
-          <MainDashboard />
-          <main className="w-full">
-            <SidebarTrigger className="hover:cursor-pointer" />
-            {children}
-          </main>
-        </SidebarProvider>
+        <QueryProvider>
+          <SidebarProvider className="">
+            <MainDashboard />
+            <main className="w-full">
+              <SidebarTrigger className="hover:cursor-pointer" />
+              {children}
+            </main>
+          </SidebarProvider>
+        </QueryProvider>
       </body>
     </html>
   );

@@ -19,5 +19,5 @@ export const LoanFormSchema = z.object({
   Amount: z.number(),
   DueDate: z.number(),
   Autopay: z.boolean(),
-  LoanFinshed: z.boolean(),
+  LoanFinished: z.boolean(),
 });
